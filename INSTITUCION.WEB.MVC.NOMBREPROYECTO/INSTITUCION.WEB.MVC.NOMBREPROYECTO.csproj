@@ -45,8 +45,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="HELPER.NET.ENTIDADES, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Helper.Net.Entidades.1.0.0\lib\net472\HELPER.NET.ENTIDADES.dll</HintPath>
+    <Reference Include="HELPER.NET.ENTIDADES, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Helper.Net.Entidades.1.0.1\lib\net472\HELPER.NET.ENTIDADES.dll</HintPath>
     </Reference>
     <Reference Include="HELPER.NET.MVC, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Helper.Net.Mvc.1.0.0\lib\net472\HELPER.NET.MVC.dll</HintPath>
