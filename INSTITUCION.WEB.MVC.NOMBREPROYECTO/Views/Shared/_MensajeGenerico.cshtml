@@ -1,0 +1,26 @@
+﻿@model HELPER.NET.ENTIDADES.Dto.Generico.SubRespuesta
+
+@Scripts.Render("~/bundles/Shared/_MensajeGenerico")
+
+<input type="hidden" id="MSGTitulo" name="MSGTitulo" value="@Model.mensaje" />
+<input type="hidden" id="MSGDetalle" name="MSGDetalle" value="@Model.mensajeDetalle" />
+<input type="hidden" id="MSGDecision" name="MSGDecision" value="@(Model.decision ? "1" : "0")" />
+<input type="hidden" id="MSGTipoRespuesta" name="MSGTipoRespuesta" value="@(((int)Model.TipoRespuesta).ToString())" />
+
+<div id="Mensaje" class="modal fade" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 id="txtMensajeTitulo" class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+                <div id="txtMensajeDetalle" align="justify" role="alert">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,5 +1,4 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
 namespace INSTITUCION.WEB.MVC.NOMBREPROYECTO
 {
@@ -8,10 +7,17 @@ namespace INSTITUCION.WEB.MVC.NOMBREPROYECTO
         // Para obtener más información sobre las uniones, visite https://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
+            #region Scripts.
+
+            BundleTable.EnableOptimizations = true;
+
+            #region General.
+
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/jquery-{version}.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
+                        "~/Scripts/jquery.unobtrusive*",
                         "~/Scripts/jquery.validate*"));
 
             // Utilice la versión de desarrollo de Modernizr para desarrollar y obtener información. De este modo, estará
@@ -20,11 +26,35 @@ namespace INSTITUCION.WEB.MVC.NOMBREPROYECTO
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js"));
+                      "~/Scripts/bootstrap.min.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/bootstrap.min.css",
                       "~/Content/site.css"));
+
+            #endregion
+
+            #region Shared.
+
+            bundles.Add(new ScriptBundle("~/bundles/Shared/_Cargando").Include(
+                "~/Scripts/Shared/_Cargando.js"));
+            bundles.Add(new ScriptBundle("~/bundles/Shared/_MensajeGenerico").Include(
+                "~/Scripts/Shared/_MensajeGenerico.js"));
+
+            #endregion
+
+            #region Módulos.
+
+            #region Capitales.
+
+            bundles.Add(new ScriptBundle("~/bundles/Modulos/Capitales/_InicioContenido").Include(
+                "~/Scripts/Modulos/Capitales/_InicioContenido.js"));
+
+            #endregion
+
+            #endregion
+
+            #endregion
         }
     }
 }

@@ -1,0 +1,86 @@
+﻿@model INSTITUCION.WEB.MVC.NOMBREPROYECTO.Models.Modulos.Capitales.CapitalesVm
+
+@using HELPER.NET.MVC;
+
+@Html.Hidden("Control")
+@Html.Hidden("Evento")
+@Html.Hidden("ValorControlEvento")
+
+@Html.HiddenFor(m => m.ModeloVistaNegocio.CantidadRespuestasCorrectas)
+@Html.HiddenFor(m => m.ModeloVistaNegocio.CantidadRespuestasIncorrectas)
+@Html.HiddenEncryptFor(m => m.ModeloVistaNegocio.ListaPaisesCapitales)
+@Html.HiddenFor(m => m.ModeloVistaNegocio.NumeroPregunta)
+@Html.HiddenEncryptFor(m => m.Responder)
+
+@Html.Partial("_MensajeGenerico", ViewData["Mensaje"])
+
+<div class="row">
+    <div class="col-md-12">
+        <br /><br />
+    </div>
+</div>
+@if (Model.ModeloVistaNegocio.ListaPaisesCapitales.Select(o => o.Id).Max() < Model.ModeloVistaNegocio.NumeroPregunta)
+{
+    <div class="row">
+        <div class="col-md-12" align="center">
+            GAME OVER.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            Cantidad de Respuestas Buenas :
+        </div>
+        <div class="col-md-8">
+            @Model.ModeloVistaNegocio.CantidadRespuestasCorrectas
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            Cantidad de Respuestas Malas :
+        </div>
+        <div class="col-md-8">
+            @Model.ModeloVistaNegocio.CantidadRespuestasIncorrectas
+        </div>
+    </div>
+}
+else
+{
+    <div class="row">
+        <div class="col-md-3">
+            Pregunta N°@Html.DisplayFor(m => m.ModeloVistaNegocio.NumeroPregunta, new { @class = "control-label" })
+        </div>
+        <div class="col-md-9">
+            ¿Cuál es la capital de @Model.ModeloVistaNegocio.ListaPaisesCapitales[Model.ModeloVistaNegocio.NumeroPregunta - 1].Pais?
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <br /><br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            Respuesta:
+        </div>
+        <div class="col-md-9">
+            @Html.TextBoxFor(m => m.ModeloVistaNegocio.RespuestaJugador, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12" align="right">
+            @Html.ButtonFor(m => m.Responder)
+        </div>
+    </div>
+}
+
+@Scripts.Render("~/bundles/Modulos/Capitales/_InicioContenido")

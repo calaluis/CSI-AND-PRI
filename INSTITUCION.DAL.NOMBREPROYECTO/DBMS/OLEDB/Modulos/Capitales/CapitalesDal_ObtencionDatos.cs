@@ -8,6 +8,10 @@ namespace INSTITUCION.DAL.NOMBREPROYECTO.DBMS.OLEDB.Modulos.Capitales
 {
     public partial class CapitalesDal
     {
+        /// <summary>
+        /// Método que permite obtener la lista de preguntas.
+        /// </summary>
+        /// <returns>TRUE = Datos obtenidos correctamente; FALSE = Problemas al obtener los datos.</returns>
         public Respuesta<List<CapitalesDto>> ObtenerPreguntas() 
         {
             Respuesta<List<CapitalesDto>> Resp = new Respuesta<List<CapitalesDto>>()

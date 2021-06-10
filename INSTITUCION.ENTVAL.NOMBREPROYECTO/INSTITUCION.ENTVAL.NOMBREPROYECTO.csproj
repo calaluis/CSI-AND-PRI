@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\INSTITUCION.ENTVAL.NOMBREPROYECTO.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -35,6 +36,7 @@
       <HintPath>..\packages\Helper.Net.Entidades.1.0.1\lib\net472\HELPER.NET.ENTIDADES.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,7 +47,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dto\Modulos\Capitales\CapitalesDto.cs" />
+    <Compile Include="Dto\Modulos\Capitales\CuestionarioDto.cs" />
+    <Compile Include="Interfaces\Modulos\Capitales\ICapitalesApl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validaciones\Modulos\Capitales\CuestionarioValidacionAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />

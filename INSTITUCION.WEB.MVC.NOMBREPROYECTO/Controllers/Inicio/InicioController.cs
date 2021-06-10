@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace INSTITUCION.WEB.MVC.NOMBREPROYECTO.Controllers
 {
-    public class HomeController : Controller
+    public class InicioController : ControllerBaseController
     {
         public ActionResult Index()
         {
@@ -15,14 +11,14 @@ namespace INSTITUCION.WEB.MVC.NOMBREPROYECTO.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Luis Rodrigo Carrasco Lagos (calaluis).";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Para contactarme, puede utilizar correo electrónico o la red social LinkedIn.";
 
             return View();
         }
