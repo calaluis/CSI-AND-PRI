@@ -35,14 +35,14 @@
     <Reference Include="HELPER.NET.DAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Helper.Net.Dal.1.0.0\lib\net472\HELPER.NET.DAL.dll</HintPath>
     </Reference>
-    <Reference Include="HELPER.NET.DAL.OLEDB, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Helper.Net.OleDb.1.0.0\lib\net472\HELPER.NET.DAL.OLEDB.dll</HintPath>
+    <Reference Include="HELPER.NET.DAL.OLEDB, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Helper.Net.OleDb.1.0.1\lib\net472\HELPER.NET.DAL.OLEDB.dll</HintPath>
     </Reference>
-    <Reference Include="HELPER.NET.DAL.SQLSERVER, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Helper.Net.SqlServer.1.0.0\lib\net472\HELPER.NET.DAL.SQLSERVER.dll</HintPath>
+    <Reference Include="HELPER.NET.DAL.SQLSERVER, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Helper.Net.SqlServer.1.0.2\lib\net472\HELPER.NET.DAL.SQLSERVER.dll</HintPath>
     </Reference>
-    <Reference Include="HELPER.NET.ENTIDADES, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Helper.Net.Entidades.1.0.1\lib\net472\HELPER.NET.ENTIDADES.dll</HintPath>
+    <Reference Include="HELPER.NET.ENTIDADES, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Helper.Net.Entidades.1.0.2\lib\net472\HELPER.NET.ENTIDADES.dll</HintPath>
     </Reference>
     <Reference Include="INSTITUCION.ENTVAL.NOMBREPROYECTO">
       <HintPath>..\INSTITUCION.ENTVAL.NOMBREPROYECTO\bin\Debug\INSTITUCION.ENTVAL.NOMBREPROYECTO.dll</HintPath>
@@ -62,6 +62,8 @@
   <ItemGroup>
     <Compile Include="DBMS\OLEDB\Modulos\Capitales\CapitalesDal_ObtencionDatos.cs" />
     <Compile Include="DBMS\OLEDB\Modulos\Capitales\CapitalesDal_Atributos.cs" />
+    <Compile Include="DBMS\OLEDB\Modulos\Personas\PersonasDal_Funcionalidades.cs" />
+    <Compile Include="DBMS\OLEDB\Modulos\Personas\PersonasDal_Atributos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -83,6 +85,12 @@
     <Content Include="DBMS\OLEDB\CSI_AND_PRI.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="DBMS\OLEDB\Modulos\Personas\Consultas\EliminarPersona.sql" />
+    <EmbeddedResource Include="DBMS\OLEDB\Modulos\Personas\Consultas\ActualizarPersona.sql" />
+    <EmbeddedResource Include="DBMS\OLEDB\Modulos\Personas\Consultas\ConsultarCantidadPersonas.sql" />
+    <EmbeddedResource Include="DBMS\OLEDB\Modulos\Personas\Consultas\ConsultarPersonas.sql" />
+    <EmbeddedResource Include="DBMS\OLEDB\Modulos\Personas\Consultas\ConsultarSexo.sql" />
+    <EmbeddedResource Include="DBMS\OLEDB\Modulos\Personas\Consultas\InsertarPersona.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

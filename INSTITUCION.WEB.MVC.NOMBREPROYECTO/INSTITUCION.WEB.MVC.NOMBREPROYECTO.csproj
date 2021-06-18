@@ -45,8 +45,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="HELPER.NET.ENTIDADES, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Helper.Net.Entidades.1.0.1\lib\net472\HELPER.NET.ENTIDADES.dll</HintPath>
+    <Reference Include="HELPER.NET.ENTIDADES, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Helper.Net.Entidades.1.0.2\lib\net472\HELPER.NET.ENTIDADES.dll</HintPath>
     </Reference>
     <Reference Include="HELPER.NET.MVC, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Helper.Net.Mvc.1.0.1\lib\net472\HELPER.NET.MVC.dll</HintPath>
@@ -142,10 +142,13 @@
     <Compile Include="Controllers\Inicio\InicioController.cs" />
     <Compile Include="Controllers\Modulos\Capitales\CapitalesController_Atributos.cs" />
     <Compile Include="Controllers\Modulos\Capitales\CapitalesController_Implementacion.cs" />
+    <Compile Include="Controllers\Modulos\Personas\PersonasController_Implementacion.cs" />
+    <Compile Include="Controllers\Modulos\Personas\PersonasController_Atributos.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Modulos\Capitales\CapitalesVm.cs" />
+    <Compile Include="Models\Modulos\Personas\PersonasVm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -174,6 +177,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\Modulos\Capitales\_InicioContenido.js" />
+    <Content Include="Scripts\Modulos\Personas\_InicioContenido.js" />
     <Content Include="Scripts\Shared\_Cargando.js" />
     <Content Include="Scripts\Shared\_MensajeGenerico.js" />
     <Content Include="Web.config" />
@@ -194,6 +198,8 @@
     <Content Include="Views\Shared\_Cargando.cshtml" />
     <Content Include="Views\Modulos\Capitales\_IndexContenido.cshtml" />
     <Content Include="Views\Shared\_MensajeGenerico.cshtml" />
+    <Content Include="Views\Modulos\Personas\Index.cshtml" />
+    <Content Include="Views\Modulos\Personas\_IndexContenido.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

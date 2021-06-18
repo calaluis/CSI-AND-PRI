@@ -1,0 +1,20 @@
+﻿@model INSTITUCION.WEB.MVC.NOMBREPROYECTO.Models.Modulos.Personas.PersonasVm
+
+@Html.Partial("_Cargando")
+
+@using (Ajax.BeginForm("Index", null, new AjaxOptions
+{
+    HttpMethod = "POST",
+    UpdateTargetId = "Formulario",
+    InsertionMode = InsertionMode.Replace,
+    OnBegin = "EnProceso",
+    OnSuccess = "onSuccess",
+    OnFailure = "OnFailure"
+}, new { @class = "form-horizontal" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.Hidden("EnProceso", ViewData["Loading"])
+    <div id="Formulario">
+        @Html.Partial("_IndexContenido", Model)
+    </div>
+}

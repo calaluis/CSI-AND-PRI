@@ -32,8 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="HELPER.NET.ENTIDADES, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Helper.Net.Entidades.1.0.1\lib\net472\HELPER.NET.ENTIDADES.dll</HintPath>
+    <Reference Include="HELPER.NET.ENTIDADES, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Helper.Net.Entidades.1.0.2\lib\net472\HELPER.NET.ENTIDADES.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -48,9 +48,14 @@
   <ItemGroup>
     <Compile Include="Dto\Modulos\Capitales\CapitalesDto.cs" />
     <Compile Include="Dto\Modulos\Capitales\CuestionarioDto.cs" />
+    <Compile Include="Dto\Modulos\Personas\MantenedorPersonasDto.cs" />
+    <Compile Include="Dto\Modulos\Personas\PersonaDto.cs" />
+    <Compile Include="Enumeraciones\Modulos\Personas\TiposDePagina.cs" />
     <Compile Include="Interfaces\Modulos\Capitales\ICapitalesApl.cs" />
+    <Compile Include="Interfaces\Modulos\Personas\IPersonasApl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validaciones\Modulos\Capitales\CuestionarioValidacionAttribute.cs" />
+    <Compile Include="Validaciones\Modulos\Personas\PersonaValidacionAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />

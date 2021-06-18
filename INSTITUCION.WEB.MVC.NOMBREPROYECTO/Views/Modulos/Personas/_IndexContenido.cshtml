@@ -1,0 +1,154 @@
+﻿@model INSTITUCION.WEB.MVC.NOMBREPROYECTO.Models.Modulos.Personas.PersonasVm
+
+@using HELPER.NET.MVC;
+@using HELPER.NET.ENTIDADES.Criptografia;
+@using Newtonsoft.Json;
+
+@Html.Hidden("Control")
+@Html.Hidden("Evento")
+@Html.Hidden("ValorControlEvento")
+
+@Html.HiddenEncryptFor(m => m.ModeloVistaNegocio.DatosPaginacion)
+@Html.HiddenEncryptFor(m => m.ModeloVistaNegocio.Funcionalidad)
+@Html.HiddenEncryptFor(m => m.ModeloVistaNegocio.PersonaSeleccionada)
+@Html.HiddenEncryptFor(m => m.ModeloVistaNegocio.Tupla)
+@Html.HiddenEncryptFor(m => m.PrimeraPagina)
+@Html.HiddenEncryptFor(m => m.PaginaAnterior)
+@Html.HiddenEncryptFor(m => m.PaginaSiguiente)
+@Html.HiddenEncryptFor(m => m.UltimaPagina)
+
+@Html.Partial("_MensajeGenerico", ViewData["Mensaje"])
+
+<div class="row">
+    <div class="col-md-12">
+        <br /><br />
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="table-responsive">
+            <table class="table" id="GrillaPersonas">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre(s)</th>
+                        <th>Apellido Paterno</th>
+                        <th>Apellido Materno</th>
+                        <th>Sexo</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.ModeloVistaNegocio.Tupla)
+                    {
+                        if (item.Id == Model.ModeloVistaNegocio.PersonaSeleccionada.Id)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.HiddenFor(m => m.ModeloVistaNegocio.PersonaSeleccionada.Id, new { @Value = item.Id.ToString() })
+                                    @item.Id
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(m => m.ModeloVistaNegocio.PersonaSeleccionada.Nombre, new { @class = "form-control", @Value = item.Nombre })
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(m => m.ModeloVistaNegocio.PersonaSeleccionada.ApellidoPaterno, new { @class = "form-control", @Value = item.ApellidoPaterno })
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(m => m.ModeloVistaNegocio.PersonaSeleccionada.ApellidoMaterno, new { @class = "form-control", @Value = item.ApellidoMaterno })
+                                </td>
+                                <td>
+                                    @Html.HiddenEncryptFor(m => m.ModeloVistaNegocio.PersonaSeleccionada.Sexo)
+                                    @Html.DropDownListDosFor(m => m.ModeloVistaNegocio.PersonaSeleccionada.Sexo, new { @class = "form-control" })
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-link" onclick="Actualizar()">Actualizar</button>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-link" onclick="Cancelar('@EncriptacionRijndael.Encriptar(JsonConvert.SerializeObject(item))');">Cancelar</button>
+                                </td>
+                            </tr>
+                        }
+                        else
+                        {
+                            <tr>
+                                <td>@item.Id</td>
+                                <td>@item.Nombre</td>
+                                <td>@item.ApellidoPaterno</td>
+                                <td>@item.ApellidoMaterno</td>
+                                <td>@item.Sexo.Where(o => o.esSeleccionado).Select(o => o.nombreOpcion).FirstOrDefault()</td>
+                                <td>
+                                    <button type="button" class="btn btn-link" onclick="Editar('@EncriptacionRijndael.Encriptar(JsonConvert.SerializeObject(item))');">Editar</button>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-link" onclick="Eliminar('@EncriptacionRijndael.Encriptar(JsonConvert.SerializeObject(item))');">Eliminar</button>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+                <tfoot>
+                    @if (!Model.ModeloVistaNegocio.Tupla.Where(o => o.Id == Model.ModeloVistaNegocio.PersonaSeleccionada.Id).Any())
+                    {
+                        <tr>
+                            <td>
+                                @Html.HiddenFor(m => m.ModeloVistaNegocio.PersonaSeleccionada.Id)
+                            </td>
+                            <td>
+                                @Html.TextBoxFor(m => m.ModeloVistaNegocio.PersonaSeleccionada.Nombre, new { @class = "form-control" })
+                            </td>
+                            <td>
+                                @Html.TextBoxFor(m => m.ModeloVistaNegocio.PersonaSeleccionada.ApellidoPaterno, new { @class = "form-control" })
+                            </td>
+                            <td>
+                                @Html.TextBoxFor(m => m.ModeloVistaNegocio.PersonaSeleccionada.ApellidoMaterno, new { @class = "form-control" })
+                            </td>
+                            <td>
+                                @Html.HiddenEncryptFor(m => m.ModeloVistaNegocio.PersonaSeleccionada.Sexo)
+                                @Html.DropDownListDosFor(m => m.ModeloVistaNegocio.PersonaSeleccionada.Sexo, new { @class = "form-control" })
+                            </td>
+                            <td colspan="2">
+                                <button type="button" class="btn btn-link" onclick="Insertar()">Ingresar</button>
+                            </td>
+                        </tr>
+                    }
+                    else
+                    {
+                        @Html.HiddenEncryptFor(o => o.ModeloVistaNegocio.PersonaSeleccionada)
+                    }
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <br /><br />
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-1" align="center">
+        @Html.ButtonFor(m => m.PrimeraPagina)
+    </div>
+    <div class="col-md-1" align="center">
+        @Html.ButtonFor(m => m.PaginaAnterior)
+    </div>
+    <div class="col-md-1" align="center">
+        <label>Página</label>
+    </div>
+    <div class="col-md-1" align="center">
+        @Html.TextBoxFor(m => m.ModeloVistaNegocio.DatosPaginacion.Nro_Pag, new { @class = "form-control" })
+    </div>
+    <div class="col-md-1" align="center">
+        <label>de @Model.ModeloVistaNegocio.DatosPaginacion.Paginas_Total</label>
+    </div>
+    <div class="col-md-1" align="center">
+        @Html.ButtonFor(m => m.PaginaSiguiente)
+    </div>
+    <div class="col-md-1" align="center">
+        @Html.ButtonFor(m => m.UltimaPagina)
+    </div>
+</div>
+
+@Scripts.Render("~/bundles/Modulos/Personas/_InicioContenido")

@@ -56,13 +56,9 @@ namespace INSTITUCION.WEB.MVC.NOMBREPROYECTO
 
             #region Modulos.
 
-            #region Capitales.
-
             base.ViewLocationFormats = Helper.AddItem(base.ViewLocationFormats, "~/Views/Modulos/{1}/{0}.cshtml");
             base.PartialViewLocationFormats = Helper.AddItem(base.PartialViewLocationFormats, "~/Views/Modulos/{1}/{0}.cshtml");
             base.MasterLocationFormats = Helper.AddItem(base.MasterLocationFormats, "~/Views/Modulos/{1}/{0}.cshtml");
-
-            #endregion
 
             #endregion
 

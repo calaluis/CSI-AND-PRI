@@ -32,8 +32,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="HELPER.NET.ENTIDADES, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Helper.Net.Entidades.1.0.1\lib\net472\HELPER.NET.ENTIDADES.dll</HintPath>
+    <Reference Include="HELPER.NET.DAL.OLEDB, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Helper.Net.OleDb.1.0.1\lib\net472\HELPER.NET.DAL.OLEDB.dll</HintPath>
+    </Reference>
+    <Reference Include="HELPER.NET.ENTIDADES, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Helper.Net.Entidades.1.0.2\lib\net472\HELPER.NET.ENTIDADES.dll</HintPath>
     </Reference>
     <Reference Include="HELPER.NET.REPORTERIA, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Helper.Net.Reporteria.1.0.0\lib\net472\HELPER.NET.REPORTERIA.dll</HintPath>
@@ -65,6 +68,8 @@
   <ItemGroup>
     <Compile Include="Procesos\Modulos\Capitales\CapitalesApl_PreguntasRespuestas.cs" />
     <Compile Include="Procesos\Modulos\Capitales\CapitalesApl_Atributos.cs" />
+    <Compile Include="Procesos\Modulos\Personas\PersonasApl_Mantenedor.cs" />
+    <Compile Include="Procesos\Modulos\Personas\PersonasApl_Atributos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

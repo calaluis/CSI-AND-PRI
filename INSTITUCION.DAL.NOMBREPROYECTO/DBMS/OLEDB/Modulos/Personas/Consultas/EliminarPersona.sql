@@ -1,0 +1,3 @@
+﻿DELETE	P
+FROM	Personas P
+WHERE	P.Id = [ID]

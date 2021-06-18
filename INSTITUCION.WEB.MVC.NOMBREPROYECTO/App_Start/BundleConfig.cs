@@ -52,6 +52,13 @@ namespace INSTITUCION.WEB.MVC.NOMBREPROYECTO
 
             #endregion
 
+            #region Personas.
+
+            bundles.Add(new ScriptBundle("~/bundles/Modulos/Personas/_InicioContenido").Include(
+                "~/Scripts/Modulos/Personas/_InicioContenido.js"));
+
+            #endregion
+
             #endregion
 
             #endregion
