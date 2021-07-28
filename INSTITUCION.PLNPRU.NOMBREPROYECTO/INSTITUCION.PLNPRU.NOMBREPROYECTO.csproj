@@ -5,11 +5,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8A2F2F1F-7889-422A-8CD1-3EFACF992F46}</ProjectGuid>
+    <ProjectGuid>{0B3AB577-E461-44D9-A4A0-C1238F829E6E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>INSTITUCION.DAL.NOMBREPROYECTO.TEST</RootNamespace>
-    <AssemblyName>INSTITUCION.DAL.NOMBREPROYECTO.TEST</AssemblyName>
+    <RootNamespace>INSTITUCION.PLNPRU.NOMBREPROYECTO</RootNamespace>
+    <AssemblyName>INSTITUCION.PLNPRU.NOMBREPROYECTO</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -52,7 +52,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Inicio\Modulos\Capitales\CapitalesTest.cs" />
+    <Compile Include="PlanDePruebas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
